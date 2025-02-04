@@ -47,6 +47,7 @@ struct FiresGameView: View {
             UserDefaults.standard.set(new, forKey: "coins")
         }
         .onReceive(NotificationCenter.default.publisher(for: Notification.Name("plane_fire_rested"))) { _ in
+            coins += 100
             withAnimation {
                 gameStatus = "game_win"
             }
